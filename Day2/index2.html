@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhinconAcademyDay2</title>
+</head>
+
+<body>
+  <h1>Luas Persegi Panjang</h1>
+
+  Panjang:
+  <input type="number" name="panjangpersegi" id="panjangpersegi" /><br />
+  Lebar: <input type="number" name="lebarpersegi" id="lebarpersegi" /><br /><br />
+  <div>
+    <div>
+      <button
+        onclick="luaspersegipanjang(document.getElementById('panjangpersegi').value,document.getElementById('lebarpersegi').value)">
+        Hitung
+      </button>
+      <p>Hasil : <span id="hasilluas"></span></p>
+    </div>
+    <h1>Keliling Persegi Panjang</h1>
+
+    Panjang:
+    <input type="number" name="panjangpersegi" id="panjangpersegikeliling" /><br />
+    Lebar:
+    <input type="number" name="lebarpersegi" id="lebarpersegikeliling" /><br /><br />
+    <div>
+      <div>
+        <button
+          onclick="kelilingpersegipanjang(document.getElementById('panjangpersegikeliling').value,document.getElementById('lebarpersegikeliling').value)">
+          Hitung
+        </button>
+        <p>Hasil : <span id="hasilkeliling"></span></p>
+      </div>
+
+      <h1>Lingkaran</h1>
+
+      Jari-jari:
+      <input type="number" name="jari" id="radius" /><br /><br />
+      <div>
+        <button onclick="lingkaran(document.getElementById('radius').value)">
+          Hitung
+        </button>
+        <p>Hasil Diameter : <span class="hdl"></span>
+        </p>
+        <p>Hasil Keliling : <span class="hkl"></span>
+        </p>
+        <p>Hasil Luas : <span class="hll"></span>
+        </p>
+      </div>
+
+      <h1>Hitung selisih dua tanggal dalam hari</h1>
+
+      Tanggal Pertama :
+      <input type="number" name="tgl1" id="tgl1" /><br /><br />
+      Tanggal Kedua :
+      <input type="number" name="tgl2" id="tgl1" /><br /><br />
+      <div>
+        <button onclick="selisihtanggal(document.getElementById('tgl1').value,document.getElementById('tgl1').value)">
+          Hitung
+        </button>
+        <p>Selisih Tanggal : <span class="" id="stgl"></span>
+        </p>
+      </div>
+</body>
+
+</html>
+
+<script>
+  function luaspersegipanjang(panjangpersegi, lebarpersegi) {
+    let luas = parseInt(panjangpersegi) * parseInt(lebarpersegi);
+    document.getElementById("hasilluas").innerHTML = luas;
+  }
+
+  function kelilingpersegipanjang(psk, lpk) {
+    let keliling = parseInt(psk) * 2 + parseInt(lpk) * 2;
+    document.getElementById("hasilkeliling").innerHTML = keliling;
+  }
+
+  function lingkaran(r) {
+    const pi = 3.14
+
+    let hasildiameter = parseInt(r) * 2;
+    document.getElementsByClassName("hdl")[0].innerHTML = hasildiameter;
+
+    let hasilkeliling = parseInt(r) * pi * 2;
+    document.getElementsByClassName("hkl")[0].innerHTML = hasilkeliling;
+
+    let hasilluas = (parseInt(r)*parseInt(r)) * pi ;
+    document.getElementsByClassName("hll")[0].innerHTML = hasilluas;
+  }
+
+  function selisihtanggal(h1, h2) {
+    let selisih = parseInt(h1) - parseInt(h2);
+    document.getElementById("stgl").innerHTML = selisih;
+  }
+</script>
