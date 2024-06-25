@@ -19,7 +19,7 @@
         onclick="luaspersegipanjang(document.getElementById('panjangpersegi').value,document.getElementById('lebarpersegi').value)">
         Hitung
       </button>
-      <p>Hasil : <span id="hasilluas"></span></p>
+      <p id="hasilluas"></p>
     </div>
     <h1>Keliling Persegi Panjang</h1>
 
@@ -33,7 +33,7 @@
           onclick="kelilingpersegipanjang(document.getElementById('panjangpersegikeliling').value,document.getElementById('lebarpersegikeliling').value)">
           Hitung
         </button>
-        <p>Hasil : <span id="hasilkeliling"></span></p>
+        <p id="hasilkeliling"></p>
       </div>
 
       <h1>Lingkaran</h1>
@@ -52,19 +52,34 @@
         </p>
       </div>
 
-      <h1>Hitung selisih dua tanggal dalam hari</h1>
+      <h1>Kalkulator Sudut Segitiga</h1>
+      <label for="sudut1">Sudut 1:</label>
+      <input type="number" id="sudut1">
+      <br>
+      <label for="sudut2">Sudut 2:</label>
+      <input type="number" id="sudut2">
+      <br>
+      <button onclick="hitungSudutKetiga()">Hitung Sudut Ketiga</button>
+      <p id="sudutKetiga"></p>
 
-      Tanggal Pertama :
-      <input type="number" name="tgl1" id="tgl1" /><br /><br />
-      Tanggal Kedua :
-      <input type="number" name="tgl2" id="tgl1" /><br /><br />
-      <div>
-        <button onclick="selisihtanggal(document.getElementById('tgl1').value,document.getElementById('tgl1').value)">
-          Hitung
-        </button>
-        <p>Selisih Tanggal : <span class="" id="stgl"></span>
-        </p>
-      </div>
+      <h1>Kalkulator Selisih Tanggal</h1>
+      <label for="tanggal1">Tanggal 1:</label>
+      <input type="date" id="tanggal1">
+      <br>
+
+      <label for="tanggal2">Tanggal 2:</label>
+      <input type="date" id="tanggal2">
+      <br>
+
+      <button onclick="hitungSelisihTanggal()">Hitung Selisih</button>
+      
+      <p id="selisihTanggal"></p>
+
+      <h1>Konversi Hari ke Tahun, Bulan, Hari</h1>
+      <label for="hari">Hari:</label>
+      <input type="number" id="hari">
+      <button onclick="konversiHari()">Konversi</button>
+      <p id="hariTerkonversi"></p>
 </body>
 
 </html>
@@ -72,29 +87,54 @@
 <script>
   function luaspersegipanjang(panjangpersegi, lebarpersegi) {
     let luas = parseInt(panjangpersegi) * parseInt(lebarpersegi);
-    document.getElementById("hasilluas").innerHTML = luas;
+    document.getElementById("hasilluas").innerText = "Hasil adalah: " + luas;
   }
 
   function kelilingpersegipanjang(psk, lpk) {
     let keliling = parseInt(psk) * 2 + parseInt(lpk) * 2;
-    document.getElementById("hasilkeliling").innerHTML = keliling;
+    document.getElementById("hasilkeliling").innerText = "Hasil adalah: " + keliling;
   }
 
   function lingkaran(r) {
-    const pi = 3.14
-
+    const pi = 3.14;
+    
     let hasildiameter = parseInt(r) * 2;
     document.getElementsByClassName("hdl")[0].innerHTML = hasildiameter;
 
-    let hasilkeliling = parseInt(r) * pi * 2;
+    let hasilkeliling = Math.ceil(parseInt(r) * pi * 2);
     document.getElementsByClassName("hkl")[0].innerHTML = hasilkeliling;
 
-    let hasilluas = (parseInt(r)*parseInt(r)) * pi ;
+    let hasilluas = Math.ceil((parseInt(r) * parseInt(r)) * pi);
     document.getElementsByClassName("hll")[0].innerHTML = hasilluas;
   }
 
-  function selisihtanggal(h1, h2) {
-    let selisih = parseInt(h1) - parseInt(h2);
-    document.getElementById("stgl").innerHTML = selisih;
+  function hitungSudutKetiga() {
+    const sudutKetiga = 180 - (parseInt(document.getElementById('sudut1').value) + parseInt(document.getElementById('sudut2').value));
+    document.getElementById('sudutKetiga').innerText = "Sudut ketiga adalah: " + sudutKetiga + "°";
+  }
+
+  function hitungSelisihTanggal() {
+    const tanggal1 = new Date(document.getElementById('tanggal1').value);
+    const tanggal2 = new Date(document.getElementById('tanggal2').value);
+    let selisihmilidetik  = Math.abs((tanggal1 - tanggal2));
+    let selisihDetik  = Math.abs((tanggal1 - tanggal2)/ 1000);
+    let selisihHari = Math.ceil(selisihDetik / (60 * 60 * 24));
+    document.getElementById('selisihTanggal').innerText = "Selisihnya adalah: " + selisihHari + " hari";
+    console.log(selisihDetik,selisihmilidetik )
+  }
+
+  function konversiHari() {
+    let hari = parseInt(document.getElementById('hari').value);
+    const tahun = Math.floor(hari / 365);
+    hari = hari - tahun * 365;
+    const bulan = Math.floor(hari / 30);
+    hari = hari - bulan * 30;
+    document.getElementById('hariTerkonversi').innerText =
+      tahun + " tahun, " + bulan + " bulan, " + hari + " hari";
+      console.log(hari,tahun,bulan)
   }
 </script>
+
+<!-- mathabs = buat hasil selalu positif
+Math.ceil = bulatkan keatas jika hasil koma
+Math.floor = bulatkan kebawah jika hasil koma -->
