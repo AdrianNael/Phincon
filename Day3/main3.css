@@ -37,17 +37,16 @@ nav ul {
 nav a {
   color: white;
   text-decoration: none;
-  font-size: 18px;
   padding: 15px;
-
 }
-
+nav li a {
+  transition: background-color 0.5s ease, border 0.5s ease;
+}
 nav li a:hover {
   border: 1px solid #71ceff;
   border-radius: 25px;
   background-color: #71ceff;
 }
-
 
 main {
   height: 100vh;
@@ -241,7 +240,7 @@ h1 {
 
 .footer-icon {
   display: grid;
-  color:#2c7566 ;
+  color: #2c7566;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   margin-top: 1rem;
