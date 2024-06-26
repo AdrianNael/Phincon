@@ -9,10 +9,10 @@
 
 <body>
   <h1>Luas Persegi Panjang</h1>
-
-  Panjang:
+  <label for=""> Panjang:</label>
   <input type="number" name="panjangpersegi" id="panjangpersegi" /><br />
-  Lebar: <input type="number" name="lebarpersegi" id="lebarpersegi" /><br /><br />
+  <label for=""> Lebar: </label>
+  <input type="number" name="lebarpersegi" id="lebarpersegi" /><br /><br />
   <div>
     <div>
       <button
@@ -71,7 +71,7 @@
       <br>
 
       <button onclick="hitungSelisihTanggal()">Hitung Selisih</button>
-      
+
       <p id="selisihTanggal"></p>
 
       <h1>Konversi Hari ke Tahun, Bulan, Hari</h1>
@@ -96,7 +96,7 @@
 
   function lingkaran(r) {
     const pi = 3.14;
-    
+
     let hasildiameter = parseInt(r) * 2;
     document.getElementsByClassName("hdl")[0].innerHTML = hasildiameter;
 
@@ -115,11 +115,11 @@
   function hitungSelisihTanggal() {
     const tanggal1 = new Date(document.getElementById('tanggal1').value);
     const tanggal2 = new Date(document.getElementById('tanggal2').value);
-    let selisihmilidetik  = Math.abs((tanggal1 - tanggal2));
-    let selisihDetik  = Math.abs((tanggal1 - tanggal2)/ 1000);
+    let selisihmilidetik = Math.abs((tanggal1 - tanggal2));
+    let selisihDetik = Math.abs((tanggal1 - tanggal2) / 1000);
     let selisihHari = Math.ceil(selisihDetik / (60 * 60 * 24));
     document.getElementById('selisihTanggal').innerText = "Selisihnya adalah: " + selisihHari + " hari";
-    console.log(selisihDetik,selisihmilidetik )
+    console.log(selisihDetik, selisihmilidetik)
   }
 
   function konversiHari() {
@@ -130,7 +130,7 @@
     hari = hari - bulan * 30;
     document.getElementById('hariTerkonversi').innerText =
       tahun + " tahun, " + bulan + " bulan, " + hari + " hari";
-      console.log(hari,tahun,bulan)
+    console.log(hari, tahun, bulan)
   }
 </script>
 
