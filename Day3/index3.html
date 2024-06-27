@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="main3.css" />
 
-
+    <link href="dist/hamburgers.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -28,18 +28,34 @@
 <body>
     <header>
         <div class="container">
-            <div class="logo">sunnyside</div>
-            <nav>
-                <ul>
+            <div class="logo" href="#home">sunnyside</div>
+            <nav class="topnav">
+                <ul class="nav-desktop">
                     <li><a href="#">About</a></li>
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Projects</a></li>
-                    <li><a href="#" class="contact">Contact</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
+
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
             </nav>
+
+        </div>
+        <div id="myLinks">
+            <ul class="nav-mobile">
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Projects</a>
+                <a href="#">Contact</a>
+            </ul>
+
+
         </div>
     </header>
     <main>
+
         <div class="main-content">
             <h1>WE ARE CREATIVES</h1>
             <div class="arrow">
@@ -97,7 +113,8 @@
                     <img src="/Day3/images/image-emily.jpg" alt="">
                 </div>
 
-                <p style="font-weight: 400;">We pot our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were
+                <p style="font-weight: 400;">We pot our trust in Sunnyside and they delivered, making sure our needs
+                    were met and deadlines were
                     always hit.</p>
                 <div>
                     <h3>Emily R.</h3>
@@ -109,7 +126,8 @@
                     <img src="/Day3/images/image-thomas.jpg" alt="">
                 </div>
 
-                <p style="font-weight: 400;">Sunnyside's enthusiam coupled with their keen interest in our brand's success made it a a satisfying and enjoyable experience.</p>
+                <p style="font-weight: 400;">Sunnyside's enthusiam coupled with their keen interest in our brand's
+                    success made it a a satisfying and enjoyable experience.</p>
                 <div>
                     <h3>Thomas S.</h3>
                     <h5>Chief Operating Officer</h5>
@@ -121,7 +139,8 @@
                     <img src="/Day3/images/image-jennie.jpg" alt="">
                 </div>
 
-                <p style="font-weight: 400;">We pot our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were
+                <p style="font-weight: 400;">We pot our trust in Sunnyside and they delivered, making sure our needs
+                    were met and deadlines were
                     always hit.</p>
                 <div>
                     <h3>Jennie F.</h3>
@@ -155,3 +174,12 @@
 </body>
 
 </html>
+
+<script>function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }</script>

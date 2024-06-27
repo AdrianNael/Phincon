@@ -4,7 +4,7 @@
 }
 
 body {
-  /* font-family: Arial, sans-serif; */
+  background-color: whitesmoke;
   color: white;
   height: auto;
   font-size: 18px;
@@ -12,20 +12,32 @@ body {
   font-weight: 600;
 }
 
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  background-color: #333;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 .container {
   display: grid;
   grid-template-columns: 3fr 1fr;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem;
-  position: absolute;
+  padding: 2rem;
   z-index: 99;
   top: 0;
+  background-color: #3ebfff;
+  opacity: 100%;
 }
 
 .logo {
   font-size: 24px;
   font-weight: bolder;
+  color: white;
 }
 
 nav ul {
@@ -39,9 +51,11 @@ nav a {
   text-decoration: none;
   padding: 15px;
 }
+
 nav li a {
   transition: background-color 0.5s ease, border 0.5s ease;
 }
+
 nav li a:hover {
   border: 1px solid #71ceff;
   border-radius: 25px;
@@ -93,10 +107,16 @@ h1 {
 
 .c2 {
   background-image: url(/Day3/images/desktop/image-transform.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
 }
 
 .c3 {
   background-image: url(/Day3/images/desktop/image-stand-out.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
 }
 
 .c4 {
@@ -111,7 +131,9 @@ h1 {
 
 .c5 {
   background-image: url(/Day3/images/desktop/image-graphic-design.jpg);
-
+  background-size: cover;
+  background-position: center;
+  display: flex;
   min-height: 67vh;
   justify-content: end;
   align-items: center;
@@ -136,7 +158,9 @@ h1 {
 
 .c6 {
   background-image: url(/Day3/images/desktop/image-photography.jpg);
-
+  background-size: cover;
+  background-position: center;
+  display: flex;
   min-height: 67vh;
   justify-content: end;
   align-items: center;
@@ -164,12 +188,14 @@ h1 {
   padding: 10rem;
   text-align: center;
 }
+
 .heading-testimoni {
   color: hsl(210, 4%, 67%);
   margin-bottom: 5rem;
   font-weight: 900;
   letter-spacing: 5px;
 }
+
 .card-testimoni {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -261,10 +287,163 @@ h1 {
 .c1-hover:hover {
   text-decoration: solid underline #fcd20f 5px;
 }
+
 .c2-hover:hover {
   text-decoration: solid underline #fc766b 5px;
 }
 
 i:hover {
   color: white;
+}
+
+/* Style the navigation menu */
+/* Hide the links inside the navigation menu (except for logo/home) */
+#myLinks {
+  display: none;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  display: none;
+}
+
+
+
+
+@media only screen and (max-width: 400px) {
+  .nav-desktop {
+    display: none;
+  }
+
+  .container-image {
+    height: 65vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-testimoni {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+
+  .container-testimoni {
+    padding: 2rem;
+  }
+
+  .heading-testimoni {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    letter-spacing: 3px;
+  }
+
+  .container-content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  main {
+    height: 100vh;
+    background-image: url("/Day3/images/desktop/image-header.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+  }
+
+  h1 {
+    font-size: 30px;
+    font-family: "Fraunces", serif;
+    font-weight: 900;
+    text-align: center;
+    height: 0px;
+    margin-top: 2rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .c2,
+  .c3 {
+    height: 50vh;
+    background-position: center;
+  }
+
+  .c1 {
+    order: 2;
+  }
+
+  .c2 {
+    order: 1;
+  }
+
+  .c3 {
+    order: 3;
+  }
+
+  .c4 {
+    order: 4;
+  }
+
+  .c5 {
+    order: 5;
+  }
+
+  .c6 {
+    order: 6;
+  }
+
+  .container-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .c1,
+  .c4 {
+    padding: 3rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .c5-text {
+    margin-inline-start: 0rem;
+    margin-inline-end: 0rem;
+  }
+
+  .topnav a.icon {
+    display: block;
+    position: absolute;
+    margin-top: 5px;
+    right: 0;
+    top: 0;
+  }
+}
+
+.nav-mobile {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  background-color: whitesmoke;
+  text-align: center;
+  gap: 1rem;
+  padding: 2rem;
+  color: grey;
+  font-weight: 700;
+  margin-top: 1rem;
+  padding: 5rem;
+  margin-left: 5rem;
+}
+
+.nav-mobile ul a {
+
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+}
+
+.nav-mobile a:hover {
+  color: black;
+  font-weight: bolder;
+  padding: 5px;
+  background-color: #fcd20f;
 }
