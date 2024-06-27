@@ -264,6 +264,11 @@ h1 {
   color: #2c7566;
 }
 
+.footer-hl a:hover {
+  text-decoration: none;
+  color: white;
+}
+
 .footer-icon {
   display: grid;
   color: #2c7566;
@@ -306,9 +311,6 @@ i:hover {
 .topnav a.icon {
   display: none;
 }
-
-
-
 
 @media only screen and (max-width: 400px) {
   .nav-desktop {
@@ -425,25 +427,32 @@ i:hover {
   grid-template-columns: repeat(1, 1fr);
   background-color: whitesmoke;
   text-align: center;
-  gap: 1rem;
-  padding: 2rem;
+  margin-top: 2rem;
+  margin-left: 1rem;
   color: grey;
   font-weight: 700;
-  margin-top: 1rem;
-  padding: 5rem;
-  margin-left: 5rem;
+  height: 300px ;
+  width: 350px;
 }
 
-.nav-mobile ul a {
-
+.nav-mobile a {
+  margin-left: 6rem;
+  margin-right: 6rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: grey;
   list-style: none;
   display: flex;
-  gap: 3rem;
+  text-decoration: none;
+  gap: 1rem;
+  font-weight: 600;
 }
 
 .nav-mobile a:hover {
   color: black;
-  font-weight: bolder;
-  padding: 5px;
+
+  border: 1px solid #fcd20f;
+  border-radius: 25px;
   background-color: #fcd20f;
 }
